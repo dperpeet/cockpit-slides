@@ -279,12 +279,145 @@
     </section>
 
 <!-- Upstream First part -->
-        <section>
-            <h3>Migrate Red Hat internal tests into Fedora</h3>
-            <aside class="notes">
-                Tests get updated with package
-            </aside>
-        </section>
+
+    <section>
+        <h3>Let's talk about tests !</h3>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Upstream First</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Migration of internal RHEL tests upstream into Fedora</li>
+            <li>Dedicated agile team</li>
+            <li>Coordination within RHEL QE</li>
+            <li>Priority is the BaseOS</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Benefits</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+	    <li>Test Early, Test Often</li>
+	    <li>Discover defects sooner</li>
+	    <li>Saves time</li>
+	    <li>Engagement with the community</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Guidelines</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>No exposing of internal locations</li>
+            <li>No customer data</li>
+            <li>No private bugzillas or security reproducers</li>
+            <li>Adhere to legal requirements</li>
+            <li>Must contain a LICENSE file or similar</li>
+        </ul>
+    </section>
+
+     <section style="text-align: left; padding-left: 2em;">
+        <h3>Selection of tests</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Priority is Tier1</li>
+            <li>Testing should be limited to the component</li>
+            <li>Postive/happy path</li>
+            <li>Reliable and consistent results</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Conform to the Standard Test Interface</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Tests are stored in /tests directory</li>
+            <li>Playbooks are named tests*.yml</li>
+            <li>Test in all contexts (container, atomic, classic)</li>
+            <li>Use of tags to determine the environment</li>
+            <li>Use standard-test-roles pkg to prepare the environment</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Beakerlib Libraries</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Many beakerlib tests are dependent on libraries</li>
+            <li>Built in copr and invoked in the standard-rhts role</li>
+            <li>Libraries should be named component/library_name</li>
+            <li>The name should be unique</li>
+            <li>copr repo: https://pagure.io/beakerlib-libraries/tree/master</li>
+        </ul>
+    </section>
+
+    <section>
+        <img src="beakerlib-lib.png">
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Staging of tests</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Separate Pagure instance created to stage our tests</li>
+            <li>Check to see where it passes</li>
+            <li>Downstream CI job to flag/report issues</li>
+            <li>No issues? Time to file a PR !</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Challenges we face</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+            <li>Porting tests takes time</li>
+            <li>Dependent on reviews from others</li>
+            <li>Testing in all environments</li>
+            <li>Open source ready state</li>
+            <li>Reworking the tests</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Roles & Responsibilites</h3>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>Devel</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+	    <li>Support QE as a priority</li>
+	    <li>Help QE with migration as needed</li>
+	    <li>Help maintain/fix tests which require updates</li>
+	    <li>Contribute to test development for new features</li>
+        </ul>
+    </section>
+
+    <section style="text-align: left; padding-left: 2em;">
+        <h3>QE</h3>
+
+        <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
+	    <li>Support Devel as a priority</li>
+	    <li>Define best practices and guidelines</li>
+	    <li>Review/Approve new tests to be open sourced</li>
+	    <li>Bridge the gap between devel and QE</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Progress we've made</h3>
+    </section>
+
+    <section>
+        <img src="upstreamstaging.png">
+    </section>
+
+    <section>
+        <img src="stats.png">
+    </section>
+
 
 <!-- section with examples, practical -->
 
