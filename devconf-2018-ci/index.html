@@ -46,17 +46,12 @@
         </aside>
     </section>
 
-    <section data-transition="fade-in fade-out" style="top: 244.5px; display: block;" class="present">
-        <h2 style="font-weight: 700; color: #999;">Continuous <strong>Integration</strong></h2>
-        Assemble everything together like in production,<br>and then drive it like a user.
-    </section>
-
-    <section class="left">
-        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
-            <li><span><strong>Broken packages gated</strong> close to the change</span></li>
-            <li><span><strong>Curate tests</strong> in a standard way</span></li>
-            <li><span>Grow <strong>responsibility for tests</strong></span></li>
-        </ul>
+    <section>
+        <h3><strong>Target:</strong> Changes, features, stories, only land in dist-git once shippable</h3>
+        <h3><strong>i.e.:</strong> Tested, Integrated and Documented</h3>
+        <aside class="notes">
+            <span>We're going to focus mostly on the testing and integration</span>
+        </aside>
     </section>
 
     <section>
@@ -66,32 +61,64 @@
         </aside>
     </section>
 
+    <section class="left">
+        <h3 align="center"><strong>Effecting Social Change</strong></h3>
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span>First diminish the restraining forces</span></li>
+            <li><span>Then increase driving forces</span></li>
+            <li><span>-- Kurt Lewin</span></li>
+        </ul>
+        <aside class="notes">
+            This is a process, we can't change an entire OS overnight.
+        </aside>
+    </section>
+
+    <section class="left">
+        <h3 align="center"><strong>Diminish Restraining Forces</strong></h3>
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span>Tests as <strong>easy to contribute to</strong> as the software they validate</span></li>
+            <li><span>Tests <strong>produce feedback</strong> into the development workflow</span></li>
+            <li><span>Tests <strong>are reproducible</strong> by engineers on their own machines</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h3><strong>Result:</strong> the Operating System is defined as much by tests as by spec files</h3>
+        <aside class="notes">
+
+        </aside>
+    </section>
+
+    <section data-transition="fade-in fade-out" style="top: 244.5px; display: block;" class="present">
+        <h2 style="font-weight: 700; color: #999;">Continuous <strong>Integration</strong></h2>
+        <h3>happens during the Development Phase</h3>
+    </section>
+
+    <!--<section class="left">
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span><strong>Broken packages gated</strong> close to the change</span></li>
+            <li><span><strong>Curate tests</strong> in a standard way</span></li>
+            <li><span>Grow <strong>responsibility for tests</strong></span></li>
+        </ul>
+    </section>-->
+
     <section data-background-image="merge.png">
-        <h3><strong>Goal:</strong> Make tests as easy<br>
-            to update as the package</h3>
+        <h3><strong>Goal:</strong> Make tests easy<br>
+            to contribute to</h3>
         <aside class="notes">
             Pagure
         </aside>
     </section>
 
     <section data-background-image="open-source.png">
-        <h3><strong>Goal:</strong> Curate tests<br> like we curate source code</h3>
+        <h3>Curate tests<br> like we curate source code!</h3>
     </section>
 
     <section>
-        <h3>We're storing our tests in dist-git</h3>
+        <h3>We store tests in dist-git</h3>
         <aside class="notes">
             Tests get updated with package
         </aside>
-    </section>
-
-    <section data-background-image="manifesto.png">
-        <h3>We share responsibility for the tests</h3>
-    </section>
-
-    <section data-background-image="gate.png">
-        <h3>Goal: We find and <strong>fix bugs while the code is fresh</strong><br>
-        in our mind rather than months or years later.</h3>
     </section>
 
     <section>
@@ -105,135 +132,90 @@
 
     <section data-background="#000">
         <img src="ls-rpm-ostree-dist-git.png" style="margin: 5em 0;">
-        <div class="caption">Step: The tests are stored in dist-git</div>
+        <div class="caption">Tests are stored in dist-git</div>
     </section>
 
     <section>
         <img src="pagure-screenshot.png">
-        <div class="caption">Step: Let's update a package</div>
+        <div class="caption">Pagure: update a package or change tests</div>
     </section>
 
-    <section>
-        Step: A git push triggers the pipeline<br>
-    </section>
-
-    <section>
-        Step: A Fedmsg is generated when this happens<br>
-    </section>
+    <!--<section>
+        A git push triggers the pipeline<br>
+    </section>-->
 
     <section>
         <img src="pipeline-openshift-services.png" style="margin: 5em 0;">
-        <div class="caption">Step: Pipeline runs using Openshift in CentOS CI</div>
+        <div class="caption">After a git push: Pipeline runs using OpenShift in CentOS CI</div>
     </section>
 
-    <section>
+    <!--<section>
         <img src="pipeline-jenkins-screenshot.png" >
         <div class="caption">Step: Jenkins schedules the pipeline</div>
     </section>
 
     <section>
         Step: Basic unit tests are run
-    </section>
+    </section>-->
 
-    <section>
-        <img src="pipeline-jenkins-compose.png" style="margin: 2.5em 0;">
-        <div class='caption'>Step: An Atomic Host is composed</div>
-    </section>
-
-    <section>
-        <img src="Invoking-tests-standard-interface.png" style="padding: 2em 0 2em 0;">
-        <h3><a href="https://fedoraproject.org/wiki/Changes/InvokingTests">fedoraproject.org/wiki/Changes/InvokingTests</a></h3>
+    <section data-background-image="pipeline-jenkins-compose.png">
+        <div class='caption'><strong>Integrate:</strong> An Atomic Host is composed</div>
     </section>
 
     <section>
         <img src="pipeline-fedmsg-integration-complete.png" style="margin: 0 0 2em 0;">
-        <div class='caption'>Step: Fedmsg is generated when the job is done</div>
+        <div class='caption'><strong>Feedback:</strong> Fedmsg is generated when the job is done</div>
     </section>
 
     <section>
-        Step: Results are stored in resultsdb
-    </section>
-
-    <section>
-        Step: Greenwave is used to read resultsdb
+        Results are stored in resultsdb, Greenwave reads resultsdb
     </section>
 
     <section>
         <img src="pagure_commit_AtomicCi_combined.png" height="800">
-        <div class='caption'>Step: Results are displayed in Pagure</div>
+        <div class='caption'>Feedback: Results are displayed in Pagure</div>
     </section>
 
     <section>
         <img src="pipeline-bodhi-gating.png">
-        <div class='caption'>Step: Results are displayed in Bodhi</div>
+        <div class='caption'>Feedback: Results are displayed in Bodhi</div>
     </section>
 
     <section>
         <img src="pipeline-bodhi-failed.png">
-        <div class='caption'>Step: Bodhi gates on the results</div>
+        <div class='caption'>Feedback: Bodhi gates on the results</div>
+    </section>
+
+    <section data-background-image="gate.png">
+        <h3>We find and <strong>fix bugs while the code is fresh</strong><br>
+        in our mind rather than months or years later.</h3>
     </section>
 
     <section>
-        <h2><strong>When?</strong> <span>Next steps</span></h2>
-    </section>
-
-    <section data-background-image="diagram.png">
-    </section>
-
-    <section class="left">
-        <h3>Wheeeee!</h3>
-        <ul style="padding-left: 3em; list-style: none; line-height: 250%;">
-            <li>Pull request testing in Pagure</li>
-            <li>Non Atomic Host packages</li>
-        </ul>
-    </section>
-
-    <section>
-        <img src="How-Meme.jpg">
-        <aside class="notes">
-            How?
-        </aside>
-    </section>
-
-    <section>
-        <h3>We're storing our tests in dist-git</h3>
-        <aside class="notes">
-            Tests get updated with package
-        </aside>
+        <h3>That's the how... but what about the tests?</h3>
     </section>
 
     <section data-background-image="manifesto.png">
         <h3>We share responsibility for the tests</h3>
     </section>
 
-    <section data-background-image="manifesto.png">
-        <h3>Tests are updated together with source</h3>
-    </section>
-
     <section>
-        <h3>Tests are distinct from the testing system</h3>
-        <aside class="notes">
-            Tests need to outlive the testing system.
-        </aside>
-    </section>
-
-    <section>
-        <h2>The spec</h2>
         <img src="Invoking-tests-standard-interface.png" style="padding: 2em 0 2em 0;">
         <h3><a href="https://fedoraproject.org/wiki/Changes/InvokingTests">fedoraproject.org/wiki/Changes/InvokingTests</a></h3>
+        <h3>The Standard Test Interface gives us common ground</h3>
     </section>
 
     <section>
-        <h3>Testing system is responsible to:</h3>
+        <h3>Testing system responsibilities:</h3>
 
         <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
-            <li>Build test subject (package, container, image, tree)</li>
-            <li>Decide which test suites</li>
-            <li>Schedule job(s)</li>
-            <li>Stage the test suites</li>
-            <li>Invoke the test suites in a standard way</li>
-            <li>Gather the test results and test artifacts</li>
-            <li>Relay test results</li>
+            <li><strong>Build</strong> test subject (package, container, image, tree)</li>
+            <li><strong>Decide</strong> which test suites</li>
+            <li><strong>Schedule</strong> job(s)</li>
+            <li><strong>Stage</strong> the test suites</li>
+            <li><strong>Invoke</strong> the test suites in a standard way</li>
+            <li><strong>Gather</strong> the test results and test artifacts</li>
+            <li><strong>Relay</strong> test results</li>
         </ul>
     </section>
 
@@ -250,13 +232,13 @@
     </section>
 
     <section style="text-align: left; padding-left: 2em;">
-        <h3>Test suite is responsible to:</h3>
+        <h3>Test suite responsibilities:</h3>
 
         <ul style="line-height: 180%; padding-left: 2em;">
-            <li>Install dependencies such as a test framework</li>
-            <li>Execute the test framework as necessary</li>
-            <li>Provision (usually locally) any containers or virtual machines</li>
-            <li>Provide test results and test artifacts</li>
+            <li><strong>Install</strong> dependencies such as a test framework</li>
+            <li><strong>Execute</strong> the test framework as necessary</li>
+            <li><strong>Provision</strong> (usually locally) any containers or virtual machines</li>
+            <li><strong>Provide</strong> test results and test artifacts</li>
         </ul>
     </section>
 
@@ -278,19 +260,23 @@
 </pre>
     </section>
 
+    <section>
+        <h3>What about the tests themselves?</h3>
+    </section>
+
 <!-- Upstream First part -->
 
     <section>
-        <h3>Let's talk about tests !</h3>
+        <h3>Let's talk about tests!</h3>
     </section>
 
     <section style="text-align: left; padding-left: 2em;">
         <h3>Upstream First</h3>
 
         <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
-            <li>Migration of internal RHEL tests upstream into Fedora</li>
+            <li>Migrate internal RHEL tests upstream into Fedora</li>
             <li>Dedicated agile team</li>
-            <li>Coordination within RHEL QE</li>
+            <li>Coordinate within RHEL QE</li>
             <li>Priority is the BaseOS</li>
         </ul>
     </section>
@@ -301,8 +287,8 @@
         <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
 	    <li>Test Early, Test Often</li>
 	    <li>Discover defects sooner</li>
-	    <li>Saves time</li>
-	    <li>Engagement with the community</li>
+	    <li>Save time</li>
+	    <li>Engage the community</li>
 	    <li>Bridge the gap between devel and QE</li>
         </ul>
     </section>
@@ -346,7 +332,7 @@
         <h3>Beakerlib Libraries</h3>
 
         <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
-            <li>Many beakerlib tests are dependent on libraries</li>
+            <li>Many beakerlib tests depend on libraries</li>
             <li>Built in copr and invoked in the standard-rhts role</li>
             <li>Libraries should be named component/library_name</li>
             <li>The name should be unique</li>
@@ -362,10 +348,10 @@
         <h3>Staging of tests</h3>
 
         <ul style="text-align: left; padding-left: 6em; line-height: 180%;">
-            <li>Separate Pagure instance created to stage our tests</li>
+            <li>Separate Pagure instance to stage tests</li>
             <li>Check to see where it passes</li>
             <li>Downstream CI job to flag/report issues</li>
-            <li>No issues? Time to file a PR !</li>
+            <li>No issues? Time to file a PR!</li>
         </ul>
     </section>
 
@@ -448,6 +434,26 @@
         <a href="https://upstreamfirst.fedorainfracloud.org">upstreamfirst.fedorainfracloud.org</a>
     </section>
 
+    <section>
+        <h3>Let's look at the restraining forces again...</h3>
+    </section>
+
+    <section class="left">
+        <h3 align="center"><strong>Diminish Restraining Forces</strong></h3>
+        <ul style="padding-left: 5em; list-style: none; line-height: 250%;">
+            <li><span>Tests as <strong>easy to contribute to</strong> as the software they validate</span></li>
+            <li><span>Tests <strong>produce feedback</strong> into the development workflow</span></li>
+            <li><span>Tests <strong>are reproducible</strong> by engineers on their own machines</span></li>
+        </ul>
+    </section>
+
+    <section class="left">
+        <h3>Next?</h3>
+        <ul style="padding-left: 3em; list-style: none; line-height: 250%;">
+            <li>Pull request testing in Pagure</li>
+            <li>Non Atomic Host packages</li>
+        </ul>
+    </section>
 
     <section>
         <h2><strong>Questions?
